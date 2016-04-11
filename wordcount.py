@@ -7,8 +7,11 @@ def word_counter(file_name):
 	poem_data = open(file_name)
 	for line in poem_data:
 		line = line.rstrip()
+		line = line.lower()
 		poem_line = line.split(" ")
 		for item in poem_line:
+			item = item.strip("\"").strip("?").strip(".").strip(",").strip(";").strip(
+				"!").strip(":").strip("-")
 			word_dict[item] = word_dict.get(item, 0) + 1
 	for word, word_count in word_dict.iteritems():
 		print "{} {}".format(word, word_count)
