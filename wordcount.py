@@ -1,6 +1,8 @@
 # put your code here.
 
 def word_counter(file_name):
+	""" Counts words in document. """
+	
 	word_dict = {}
 	poem_data = open(file_name)
 	for line in poem_data:
@@ -14,4 +16,5 @@ def word_counter(file_name):
 	for word, word_count in word_dict.items():
 		print "{} {}".format(word, word_count)
 	poem_data.close()
+
 word_counter("test.txt")
